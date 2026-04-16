@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cheese Buddy</title>
+</head>
+<body>
+    <header>
+        <h1>🧀 Cheese Buddy</h1>
+        <p>Your friendly cheese Expiration companion!</p>
+        <p>Color-coded for Freshness</p>
+
+        <div class="container">
+
+            <div class="add-form">
+                <h2>➕ Add Item</h2>
+                <input type="text" id="inputName" placeholder="Product name (e.g. Boar's Head Gouda)" />
+                <input type="date" id="inputDate" />
+                <button onclick="addItem()">Add to TraCKER</button>
+            </div>
+
+            <div class="summary">
+                <div class="summary-chip green"><span class="count" id="countGreen">0</span>Fresh</div>
+                <div class="summary-chip yellow"><span class="count" id="countYellow">0</span>Expiring Soon</div>
+                <div class="summary-chip red"><span class="count" id="countRed">0</span>Expired</div>
+            </div>
+
+            <div class="filter-buttons">
+                <button onclick="setFilter('all')" id="btnAll" class="active">All</button>
+                <button onclick="setFilter('yellow')" id="btnYellow">Expiring Soon</button>
+                <button onclick="setFilter('red')" id="btnExpired">Expired</button>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search Products..." oninput="renderItems()" />
+                <button onclick="clearSearch()" id="searchClear">X</button>
+            </div>
+
+            <div class="items-section">
+                <div id="itemsList"></div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>Made with 🧀 by Cheese Buddy Team</p>
+            <p>Offline Storage - Saved on this device</p>
+        </footer>
+    </header>
+
+</body>
+</html>
