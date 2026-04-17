@@ -38,7 +38,7 @@
         opacity: 0.9;
         margin-top: 4px;
     }
-
+<!-- forms styling -->
     .container {
         max-width: 600px;
         margin: 0 auto;
@@ -94,6 +94,210 @@
         transform: scale(0.98);
     }
 
+<!--Summary and chips styling-->
+    .summary {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .summary-chip {
+        flex: 1;
+        text-align: center;
+        padding: 8px 4px;
+        border-radius: 8px;
+        font-size: 0.78rem;
+        font-weight: 700;
+    }
+
+    .summary-chip .count {
+        font-size: 1.3rem;
+        display: block;
+    }
+
+    .summary-chip.green {
+        background: #eafaf1;
+        color: #27ae60;
+    }
+
+    .summary-chip.yellow {
+        background: #fef9e7;
+        color: #e67e22;
+    }
+
+    .summary-chip.red {
+        backgound: #fdedec;
+        color: #c0392b;
+    }
+
+    .filter-buttons {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .filter-buttons button {
+        flex: 1;
+        padding: 9px 4px;
+        border-radius: 8px;
+        border: 1.5px solid #e0d9cc;
+        background: white;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #666;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .filter-buttons button.active {
+        background: linear-gradient(135deg, #f5a623, #ff6b35);
+        color: white;
+        border-color: transparent;
+    }
+
+<!--Search Filter bar styling-->
+    .search-bar {
+        position: relative;
+        margin-bottom: 14px;
+    }
+
+    .search-bar input {
+        width: 100%;
+        padding: 10px 36px 10px 12px;
+        border: 1.5px solid #e0d9cc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        background: white;
+        color: #2d2d2d;
+    }
+
+    .search-bar input:focus {
+        outline: none;
+        border-color: #f5a623;
+    }
+
+    #searchClear {
+        position:absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background:none;
+        border: none;
+        font-size: 1rem;
+        color: #666;
+        cursor: pointer;
+        display: none;
+    }
+
+    .item-card {
+        background: white;
+        border-radius: 12px;
+        padding: 14px 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border-top: 1px solid #e0d9cc;
+        border-right: 1px solid #e0d9cc;
+        border-bottom: 1px solid #e0d9cc;
+        border-left: 5px solid #27ae60;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .item-card.green {
+        border-left-color: #27ae60;
+        background: #eafaf1;
+    }
+
+    .item-card-yellow {
+        border-left-color: #e67e22;
+        background: #fef9e7;
+    }
+
+    .item-card.red {
+        border-left-color: #c0392b;
+        background: #fdedec;
+    }
+
+    .item-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .item-name {
+        font-size: 0.95rem;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .item-date {
+        font-size: 0.8rem;
+        color: #666;
+        margin-top: 2px;
+    }
+
+    .item-badge {
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 3px 9px;
+        border-radius: 20px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .item-card.green .item-badge {
+        background: #a9dfbf;
+        color: #27ae60;
+    }
+
+    .item-card.yellow .item-badge {
+        background: #f9e4b7;
+        color: #e67e22;
+    }
+
+    .item-card.red .item-badge {
+        background: #f5b7b1;
+        color: #c0392b;
+    }
+
+    .btn-delete {
+        background: none;
+        border: none;
+        font-size: 1.1rem;
+        cursor: pointer;
+        color: #666;
+        padding: 4px 6px;
+        border-radius: 6px;
+        flex-shrink: 0;
+    }
+
+    .btn-delete:hover {
+        background: #fdedec;
+        color: #c0392b;
+    }
+
+    .empty-state {
+        text-align: center;
+        color: #666;
+        font-size: 0.9rem;
+        padding: 32px 16px;
+    }
+
+    .empty-state span {
+        font-size:2rem;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 0.75rem;
+        color: #666;
+        padding: 20px 16px;
+    }
+    
 
   </style>
 </head>
@@ -109,7 +313,7 @@
                 <h2>➕ Add Item</h2>
                 <input type="text" id="inputName" placeholder="Product name (e.g. Boar's Head Gouda)" />
                 <input type="date" id="inputDate" />
-                <button onclick="addItem()">Add to TraCKER</button>
+                <button onclick="addItem()">Add to Tracker</button>
             </div>
 
             <div class="summary">
