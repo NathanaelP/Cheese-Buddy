@@ -345,5 +345,16 @@
         </footer>
     </header>
 
+    <script>
+        const YELLOW_THRESHOLD = 3; // days until expiration to be considered "Expiring Soon"
+        function getItems() {
+            return JSON.parse(localStorage.getItem('cheeseItems') || '[]');
+        }
+
+        function saveItems(items) {
+            localStorage.setItem('cheeseItems', JSON.stringify(items));
+        }
+    </script>
+
 </body>
 </html>
