@@ -379,6 +379,68 @@
             const d = new Date(dateStr + 'T00:00:00');
             return d.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'});
         }
+
+        const defaultItems = [
+      { id: 1, name: 'Publix Yellow American' },
+      { id: 2, name: 'Publix White American' },
+      { id: 3, name: 'Publix Swiss' },
+      { id: 4, name: 'Publix Provolone' },
+      { id: 5, name: 'Publix Muenster' },
+      { id: 6, name: 'Publix Havarti' },
+      { id: 7, name: 'Publix Gouda' },
+      { id: 8, name: 'Publix Aged Cheddar' },
+      { id: 9, name: "Boar's Head Baby Swiss" },
+      { id: 10, name: "Boar's Head Lacey Swiss" },
+      { id: 11, name: "Boar's Head Mild Swiss" },
+      { id: 12, name: "Boar's Head Provolone" },
+      { id: 13, name: "Boar's Head Picante Provolone" },
+      { id: 14, name: "Boar's Head Yellow American" },
+      { id: 15, name: "Boar's Head White American" },
+      { id: 16, name: "Boar's Head Smoked Cheddar" },
+      { id: 17, name: "Boar's Head Muenster" },
+      { id: 18, name: "Boar's Head Cream Havarti" },
+      { id: 19, name: "Boar's Head Havarti Jalapeno" },
+      { id: 20, name: "Boar's Head Smoked Gouda" },
+      { id: 21, name: "Boar's Head Chipotle Gouda" },
+      { id: 22, name: "Boar's Head Caramelized Onion Jack" },
+      { id: 23, name: 'Manchego' },
+      { id: 24, name: 'Gruyere' },
+      { id: 25, name: 'Brie' },
+      { id: 26, name: 'Blue Cheese' },
+    ];
+
+    function getProducts() {
+        return JSON.parse(localStorage.getItem('cheeseItems') || '[]');
+    }
+
+    function saveProducts(products) {
+        localStorage.setItem('cheeseProducts', JSON.stringify(products));
+    }
+
+    function getCards() {
+        return JSON.parse((localStorage.getItem('cheeseCards') || '[]'));
+    }
+
+    function saveCards(cards) {
+        localStorage.setItem('cheeseCards', JSON.stringify(cards));
+    }
+
+    function initData() {
+        if (!localStorage.getItem('cheeseProducts')) {
+            saveProducts(defaultProducts);
+        }
+
+        if (!localStorage.getItem('cheeseCards')) {
+            saveCards([]);
+        }
+    }
+
+    function initItems() {
+      const existing = localStorage.getItem('cheeseItems');
+      if (!existing) {
+        saveItems(defaultItems);
+      }
+    }
     </script>
 
 </body>
