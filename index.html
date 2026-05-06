@@ -94,6 +94,65 @@
         transform: scale(0.98);
     }
 
+    .dropdown-wrapper {
+        position: relative;
+        margin-bottom:10px
+    }
+
+    .dropdown-wrapper input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1.5px solid #e0d9cc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        background: #fafafa;
+        color: #2d2d2d;
+        margin-bottom: 0;
+    }
+
+    .dropdown-wrapper input:focus {
+        outline: none;
+        border-color: #f5a623;
+        background: #fff;
+    }
+
+    .dropdown-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 1.5px solid #f5a623;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 100;
+        display: none;
+    }
+
+    .dropdown-item {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+        cursor: pointer;
+        border-bottom: 1px solid #f5f0e8
+    }
+
+    .dropdown-item:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-item:hover {
+        background: #fff8ee;
+        color: #f5a623;
+    }
+
+    .dropdown-item.new-item {
+        color: #f5a623;
+        font-style: italic;
+        font-weight: 600;
+    }
+
 <!--Summary and chips styling-->
     .summary {
         display: flex;
@@ -311,7 +370,10 @@
 
             <div class="add-form">
                 <h2>➕ Add Item</h2>
-                <input type="text" id="inputName" placeholder="Product name (e.g. Boar's Head Gouda)" />
+                <div class="dropdown-wrapper">
+                    <input type="text" id="inputName" placeholder="Search or Add a Cheese..." autocomplete="off" onfocus="showDropdown()" onblur="hideDropdown()" oninput="filterDropdown()" />
+                    <div id="dropdownList" class="dropdown-list"></div>
+                </div>                
                 <input type="date" id="inputDate" />
                 <button onclick="addItem()">Add to Tracker</button>
             </div>
@@ -433,6 +495,65 @@
         if (!localStorage.getItem('cheeseCards')) {
             saveCards([]);
         }
+    }
+
+    function showDropdown() {
+      document.getElementById('dropdownList').style.display = 'block';
+    }
+
+    function hideDropdown() {
+      setTimeout(() => {
+        document.getElementById('dropdownList').style.display = 'none';
+      }, 150);
+    }
+
+    function filterDropdown() {
+      const query = document.getElementById('inputName').value.toLowerCase().trim();
+      const products = getProducts();
+      const list = document.getElementById('dropdownList');
+
+      if (!query) {
+        list.innerHTML = '';
+        list.style.display = 'none';
+        return;
+      }
+
+      const matches = products.filter(p =>
+        p.name.toLowerCase().includes(query)
+      );
+
+      let html = matches
+        .map(p => `<div class="dropdown-item" onmousedown="selectProduct('${p.name.replace(/'/g, "\\'")}')">${p.name}</div>`)
+        .join('');
+
+      const exactMatch = products.some(p => p.name.toLowerCase() === query);
+      if (!exactMatch) {
+        html += `<div class="dropdown-item new-item" onmousedown="addNewProduct('${document.getElementById('inputName').value.trim().replace(/'/g, "\\'")}')">➕ Add: "${document.getElementById('inputName').value.trim()}"</div>`;
+      }
+
+      if (!html) {
+        list.style.display = 'none';
+        return;
+      }
+
+      list.innerHTML = html;
+      list.style.display = 'block';
+    }
+
+    function selectProduct(name) {
+      document.getElementById('inputName').value = name;
+      document.getElementById('dropdownList').style.display = 'none';
+      document.getElementById('inputDate').focus();
+    }
+
+    function addNewProduct(name) {
+      const products = getProducts();
+      const exists = products.some(p => p.name.toLowerCase() === name.toLowerCase());
+      if (!exists) {
+        products.push({ id: Date.now(), name });
+        saveProducts(products);
+      }
+      selectProduct(name);
     }
 
     function initItems() {
