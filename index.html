@@ -556,6 +556,31 @@
       selectProduct(name);
     }
 
+    function addItem() {
+      const nameInput = document.getElementById('inputName').value.trim();
+      const dateInput = document.getElementById('inputDate').value;
+
+      if (!name) {
+        alert('Please enter a product name.');
+        return;
+      }
+      if (!date) {
+        alert('Please select an expiration date.');
+        return;
+      }
+
+      addNewProduct(name);
+
+      const cards = getCards();
+      cards.push({ id: Date.now(), name, date});
+      saveCards(cards);
+
+      document.getElementById('inputname').value = '';
+      document.getElementById('inputDate').value = '';
+      document.getElementById('dropdownList').style.display = 'none';
+      renderItems();
+    }
+
     function initItems() {
       const existing = localStorage.getItem('cheeseItems');
       if (!existing) {
