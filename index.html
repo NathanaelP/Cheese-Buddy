@@ -575,10 +575,108 @@
       cards.push({ id: Date.now(), name, date});
       saveCards(cards);
 
-      document.getElementById('inputname').value = '';
+      document.getElementById('inputName').value = '';
       document.getElementById('inputDate').value = '';
       document.getElementById('dropdownList').style.display = 'none';
+      
       renderItems();
+    }
+
+    let currentFilter = 'all';
+
+    function setFilter(filter){
+        currentFilter = filter;
+
+        document.getElementById('btnAll').classList.remove('active');
+        document.getElementById('btnYellow').classList.remove('active');
+        document.getElementById('btnExpired').classList.remove('active');
+
+        if (filter === 'all') document.getElementById('btnALL').calssList.add('active');
+        if (filter === 'yellow') document.getElementById('btnYellow').classList.add('active');
+        if (filter === 'red') document.getElementById('btnExpired').classList.add('active');
+
+        renderItems();
+    }
+
+    function renderItems() {
+        const query = document.getElementById('searchInput').value.toLowerCase().trim();
+        const clearBtn = document.getElementById('searchClear');
+        clearBtn.style.display = query ? 'block' : 'none';
+
+        let cards = getCards();
+
+        cards.sort((a, b) => {
+            if (!a.date && !b.date) return 0;
+            if (!a.date) return 1;
+            if (!b.date) return -1;
+            return getDaysUntil(a.date) - getDaysUntil(b.date);
+        });
+
+        if (query) {
+            cards = cards.filter(c => c.name.toLowerCase().includes(query));
+        }
+
+        let green = 0, yellow = 0, red = 0;
+        getCards().forEach(c => {
+            if (!c.date) return;
+            const status = getStatus(getDaysUntil(c.date));
+            if (status === 'green') green++;
+            else if (status === 'yellow') yellow++;
+            else red++;
+        });
+
+        document.getElementById('countGreen').textContent = green;
+        document.getElementById('countYellow').textContent = yellow;
+        document.getElementById('countRed').textContent = red;
+
+        if (currentFilter === 'yellow') {
+            cards = cards.filter(c => c.date && getStatus(getDaysUntil(c.date)) === 'yellow');
+        } else if (currentFilter === 'red') {
+            cards = cards.filter(c => c.date && getStatus(getDaysUntil(c.date)) === 'red');
+        }
+
+        const list = document.getElementById('itemsList');
+
+        if (cards.length === 0) {
+            list.innerHTML = `
+            <div class="empty-state">
+                <span>🧀</span>
+                ${query ? 'No results found.' : currentFilter !== 'all' ? 'No items in this category.' : 'No cards yet. Add your first cheese above!'}
+            </div>`;
+            return;
+        }
+
+        list.innerHTML = cards.map(card => {
+            const hasDate = card.date !== '';
+            const days = hasDate ? getDaysUntil(card.date) : null;
+            const status = hasDate ? getStatus(days) : 'none';
+            const badge = hasDate ? getBadgeText(days) : 'No date set';
+            const dateDisplay = hasDate ? `Exp: ${formatDate(card.date)}` : 'No expiration date';
+
+            return `
+            <div class="item-card ${status}">
+                <div class="item-info">
+                    <div class="item-name">${escapeHtml(card.name)}</div>
+                    <div class="item-date">${dateDisplay}</div>
+                </div>
+                <div class="item-badge">${badge}</div>
+                <button class="btn-delete" onclick="deleteCard(${card.id})" title="Delete">🗑</button>
+            </div>`;
+            }).join('');
+    }
+
+    function escapeHtml(str) {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quote;');
+    }
+
+    function deleteCard(id) {
+        const cards = getCards().filter(c => c.id !== id);
+        saveCards(cards);
+        renderItems();
     }
 
     function initItems() {
@@ -587,6 +685,15 @@
         saveItems(defaultItems);
       }
     }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      renderItems();
+    }
+
+    // --- App Startup ---
+    initData();
+    renderItems();
     </script>
 
 </body>
