@@ -13,445 +13,508 @@
     }
 
     body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background: #fffdf5;
-        color: #2d2d2d;
-        min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #fffdf5;
+      color: #2d2d2d;
+      min-height: 100vh;
     }
 
-    header{
-        background: linear-gradient(135deg, #f5a623, #ff6b35);
-        color: white;
-        padding: 20px 16px 16px;
-        text-align: center;
-        box-shadow: 0 2px 12px rgba(245, 166, 35, 0.5);
+    header {
+      background: linear-gradient(135deg, #f5a623, #ff6b35);
+      color: white;
+      padding: 20px 16px 16px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(245, 166, 35, 0.5);
     }
 
     header h1 {
-        font-size: 1.8em;
-        font-weight: 800;
-        letter-spacing: -0.5px;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
     }
 
-    header p{
-        font-size: 0.85rem;
-        opacity: 0.9;
-        margin-top: 4px;
+    header p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 4px;
     }
-<!--forms styling-->
+
     .container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 16px;
     }
 
     .add-form {
-        background: white;
-        border-radius: 12px;
-        padding: 16px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        border: 1px solid #e0d9cc;
-        margin-bottom: 16px;
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e0d9cc;
+      margin-bottom: 16px;
     }
 
     .add-form h2 {
-        font-size: 1rem;
-        font-weight: 700;
-        color: #d4881a;
-        margin-bottom: 12px;
-        
+      font-size: 1rem;
+      font-weight: 700;
+      color: #d4881a;
+      margin-bottom: 12px;
     }
 
     .add-form input {
-        width: 100%;
-        padding: 10px 12px;
-        border: 1.5px solid #e0d9cc;
-        border-radius: 8px;
-        font-size: 0.95rem;
-        background: #fafafa;
-        color: #2d2d2d;
-        margin-bottom: 10px;
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #e0d9cc;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: #fafafa;
+      color: #2d2d2d;
+      margin-bottom: 10px;
     }
 
     .add-form input:focus {
-        outline: none;
-        border-color: #f5a623;
-        background: #fff;
+      outline: none;
+      border-color: #f5a623;
+      background: #fff;
     }
 
     .add-form button {
-        background: linear-gradient(135deg, #f5a623, #ff6b35);
-        color: white;
-        border: none;
-        padding: 11px;
-        border-radius: 8px;
-        font-size: 0.95rem;
-        cursor: pointer;
-        width: 100%;
+      background: linear-gradient(135deg, #f5a623, #ff6b35);
+      color: white;
+      border: none;
+      padding: 11px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
     }
 
     .add-form button:active {
-        transform: scale(0.98);
+      transform: scale(0.98);
     }
 
     .dropdown-wrapper {
-        position: relative;
-        margin-bottom:10px
+      position: relative;
+      margin-bottom: 10px;
     }
 
     .dropdown-wrapper input {
-        width: 100%;
-        padding: 10px 12px;
-        border: 1.5px solid #e0d9cc;
-        border-radius: 8px;
-        font-size: 0.95rem;
-        background: #fafafa;
-        color: #2d2d2d;
-        margin-bottom: 0;
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #e0d9cc;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: #fafafa;
+      color: #2d2d2d;
+      margin-bottom: 0;
     }
 
     .dropdown-wrapper input:focus {
-        outline: none;
-        border-color: #f5a623;
-        background: #fff;
+      outline: none;
+      border-color: #f5a623;
+      background: #fff;
     }
 
     .dropdown-list {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        border: 1.5px solid #f5a623;
-        border-top: none;
-        border-radius: 0 0 8px 8px;
-        max-height: 200px;
-        overflow-y: auto;
-        z-index: 100;
-        display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1.5px solid #f5a623;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 100;
+      display: none;
     }
 
     .dropdown-item {
-        padding: 10px 12px;
-        font-size: 0.95rem;
-        cursor: pointer;
-        border-bottom: 1px solid #f5f0e8
+      padding: 10px 12px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border-bottom: 1px solid #f5f0e8;
     }
 
     .dropdown-item:last-child {
-        border-bottom: none;
+      border-bottom: none;
     }
 
     .dropdown-item:hover {
-        background: #fff8ee;
-        color: #f5a623;
+      background: #fff8ee;
+      color: #f5a623;
     }
 
     .dropdown-item.new-item {
-        color: #f5a623;
-        font-style: italic;
-        font-weight: 600;
+      color: #f5a623;
+      font-style: italic;
+      font-weight: 600;
     }
 
-<!--Summary and chips styling-->
     .summary {
-        display: flex;
-        gap: 8px;
-        margin-bottom: 14px;
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
     }
 
     .summary-chip {
-        flex: 1;
-        text-align: center;
-        padding: 8px 4px;
-        border-radius: 8px;
-        font-size: 0.78rem;
-        font-weight: 700;
+      flex: 1;
+      text-align: center;
+      padding: 8px 4px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
     }
 
     .summary-chip .count {
-        font-size: 1.3rem;
-        display: block;
+      font-size: 1.3rem;
+      display: block;
     }
 
     .summary-chip.green {
-        background: #eafaf1;
-        color: #27ae60;
+      background: #eafaf1;
+      color: #27ae60;
     }
 
     .summary-chip.yellow {
-        background: #fef9e7;
-        color: #e67e22;
+      background: #fef9e7;
+      color: #e67e22;
     }
 
     .summary-chip.red {
-        background: #fdedec;
-        color: #c0392b;
+      background: #fdedec;
+      color: #c0392b;
     }
 
     .filter-buttons {
-        display: flex;
-        gap: 8px;
-        margin-bottom: 14px;
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
     }
 
     .filter-buttons button {
-        flex: 1;
-        padding: 9px 4px;
-        border-radius: 8px;
-        border: 1.5px solid #e0d9cc;
-        background: white;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: #666;
-        cursor: pointer;
-        transition: all 0.2s;
+      flex: 1;
+      padding: 9px 4px;
+      border-radius: 8px;
+      border: 1.5px solid #e0d9cc;
+      background: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.2s;
     }
 
     .filter-buttons button.active {
-        background: linear-gradient(135deg, #f5a623, #ff6b35);
-        color: white;
-        border-color: transparent;
+      background: linear-gradient(135deg, #f5a623, #ff6b35);
+      color: white;
+      border-color: transparent;
     }
 
-<!--Search Filter bar styling-->
     .search-bar {
-        position: relative;
-        margin-bottom: 14px;
+      position: relative;
+      margin-bottom: 14px;
     }
 
     .search-bar input {
-        width: 100%;
-        padding: 10px 36px 10px 12px;
-        border: 1.5px solid #e0d9cc;
-        border-radius: 8px;
-        font-size: 0.95rem;
-        background: white;
-        color: #2d2d2d;
+      width: 100%;
+      padding: 10px 36px 10px 12px;
+      border: 1.5px solid #e0d9cc;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: white;
+      color: #2d2d2d;
     }
 
     .search-bar input:focus {
-        outline: none;
-        border-color: #f5a623;
+      outline: none;
+      border-color: #f5a623;
     }
 
     #searchClear {
-        position:absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        background:none;
-        border: none;
-        font-size: 1rem;
-        color: #666;
-        cursor: pointer;
-        display: none;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: #666;
+      cursor: pointer;
+      display: none;
     }
 
     .item-card {
-        background: white;
-        border-radius: 12px;
-        padding: 14px 16px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        border-top: 1px solid #e0d9cc;
-        border-right: 1px solid #e0d9cc;
-        border-bottom: 1px solid #e0d9cc;
-        border-left: 5px solid #27ae60;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 10px;
+      background: white;
+      border-radius: 12px;
+      padding: 14px 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      border-top: 1px solid #e0d9cc;
+      border-right: 1px solid #e0d9cc;
+      border-bottom: 1px solid #e0d9cc;
+      border-left: 5px solid #27ae60;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
     .item-card.green {
-        border-left-color: #27ae60;
-        background: #eafaf1;
+      border-left-color: #27ae60;
+      background: #eafaf1;
     }
 
-    .item-card-yellow {
-        border-left-color: #e67e22;
-        background: #fef9e7;
+    .item-card.yellow {
+      border-left-color: #e67e22;
+      background: #fef9e7;
     }
 
     .item-card.red {
-        border-left-color: #c0392b;
-        background: #fdedec;
+      border-left-color: #c0392b;
+      background: #fdedec;
     }
 
     .item-info {
-        flex: 1;
-        min-width: 0;
+      flex: 1;
+      min-width: 0;
     }
 
     .item-name {
-        font-size: 0.95rem;
-        font-weight: 700;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+      font-size: 0.95rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .item-date {
-        font-size: 0.8rem;
-        color: #666;
-        margin-top: 2px;
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 2px;
     }
 
     .item-badge {
-        font-size: 0.75rem;
-        font-weight: 700;
-        padding: 3px 9px;
-        border-radius: 20px;
-        white-space: nowrap;
-        flex-shrink: 0;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .item-card.green .item-badge {
-        background: #a9dfbf;
-        color: #27ae60;
+      background: #a9dfbf;
+      color: #27ae60;
     }
 
     .item-card.yellow .item-badge {
-        background: #f9e4b7;
-        color: #e67e22;
+      background: #f9e4b7;
+      color: #e67e22;
     }
 
     .item-card.red .item-badge {
-        background: #f5b7b1;
-        color: #c0392b;
+      background: #f5b7b1;
+      color: #c0392b;
     }
 
     .btn-delete {
-        background: none;
-        border: none;
-        font-size: 1.1rem;
-        cursor: pointer;
-        color: #666;
-        padding: 4px 6px;
-        border-radius: 6px;
-        flex-shrink: 0;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: #666;
+      padding: 4px 6px;
+      border-radius: 6px;
+      flex-shrink: 0;
     }
 
     .btn-delete:hover {
-        background: #fdedec;
-        color: #c0392b;
+      background: #fdedec;
+      color: #c0392b;
     }
 
     .empty-state {
-        text-align: center;
-        color: #666;
-        font-size: 0.9rem;
-        padding: 32px 16px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      padding: 32px 16px;
     }
 
     .empty-state span {
-        font-size:2rem;
-        display: block;
-        margin-bottom: 8px;
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 8px;
     }
 
     footer {
-        text-align: center;
-        font-size: 0.75rem;
-        color: #666;
-        padding: 20px 16px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #666;
+      padding: 20px 16px;
     }
-    
+
+    .export-import {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    .export-import button,
+    .export-import label {
+      flex: 1;
+      text-align: center;
+      padding: 9px 4px;
+      border-radius:8px;
+      border: 1.5px solid #e0d9cc;
+      background: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .export-import button:hover,
+    .export-import label:hover {
+      border-color: #f5a623;
+      color: #f5a623;
+    }
+
+    .export-import input[type="file"] {
+      display: none;
+    }
 
   </style>
 </head>
 <body>
-    <header>
-        <h1>🧀 Cheese Buddy</h1>
-        <p>Your friendly cheese Expiration companion!</p>
-        <p>Color-coded for Freshness</p>
 
-        <div class="container">
+  <header>
+    <h1>🧀 Cheese Buddy</h1>
+    <p>Your friendly cheese expiration companion!</p>
+    <p>Color-coded for freshness</p>
+  </header>
 
-            <div class="add-form">
-                <h2>➕ Add Item</h2>
-                <div class="dropdown-wrapper">
-                    <input type="text" id="inputName" placeholder="Search or Add a Cheese..." autocomplete="off" onfocus="showDropdown()" onblur="hideDropdown()" oninput="filterDropdown()" />
-                    <div id="dropdownList" class="dropdown-list"></div>
-                </div>                
-                <input type="date" id="inputDate" />
-                <button onclick="addItem()">Add to Tracker</button>
-            </div>
+  <div class="container">
 
-            <div class="summary">
-                <div class="summary-chip green"><span class="count" id="countGreen">0</span>Fresh</div>
-                <div class="summary-chip yellow"><span class="count" id="countYellow">0</span>Expiring Soon</div>
-                <div class="summary-chip red"><span class="count" id="countRed">0</span>Expired</div>
-            </div>
+    <div class="add-form">
+      <h2>➕ Add Item</h2>
+      <div class="dropdown-wrapper">
+        <input type="text" id="inputName" placeholder="Search or add a cheese..."
+          autocomplete="off"
+          onfocus="showDropdown()"
+          onblur="hideDropdown()"
+          oninput="filterDropdown()" />
+        <div id="dropdownList" class="dropdown-list"></div>
+      </div>
+      <input type="date" id="inputDate" />
+      <button onclick="addItem()">Add to Tracker</button>
+    </div>
 
-            <div class="filter-buttons">
-                <button onclick="setFilter('all')" id="btnAll" class="active">All</button>
-                <button onclick="setFilter('yellow')" id="btnYellow">Expiring Soon</button>
-                <button onclick="setFilter('red')" id="btnExpired">Expired</button>
-            </div>
+    <div class="summary">
+      <div class="summary-chip green"><span class="count" id="countGreen">0</span>Fresh</div>
+      <div class="summary-chip yellow"><span class="count" id="countYellow">0</span>Expiring Soon</div>
+      <div class="summary-chip red"><span class="count" id="countRed">0</span>Expired</div>
+    </div>
 
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search Products..." oninput="renderItems()" />
-                <button onclick="clearSearch()" id="searchClear">X</button>
-            </div>
+    <div class="filter-buttons">
+      <button onclick="setFilter('all')" id="btnAll" class="active">All</button>
+      <button onclick="setFilter('yellow')" id="btnYellow">Expiring Soon</button>
+      <button onclick="setFilter('red')" id="btnExpired">Expired</button>
+    </div>
 
-            <div class="items-section">
-                <div id="itemsList"></div>
-            </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search products..." oninput="renderItems()" />
+      <button onclick="clearSearch()" id="searchClear">✕</button>
+    </div>
 
-        </div>
+    <div class="items-section">
+      <div id="itemsList"></div>
+    </div>
 
-        <footer>
-            <p>Made with 🧀 by Cheese Buddy Team</p>
-            <p>Offline Storage - Saved on this device</p>
-        </footer>
-    </header>
+    <div calss="export-import">
+      <button onclick="exportCards()">⬇️ Export JSON</button>
+      <label for="importFile">⬆️ Import JSON
+        <input type="file" id="importFile" accept=".json" onchange="importCards(event)" />
+      </label>
+    </div>
+  </div>
 
-    <script>
-        const YELLOW_THRESHOLD = 3; // days until expiration to be considered "Expiring Soon"
-        function getItems() {
-            return JSON.parse(localStorage.getItem('cheeseItems') || '[]');
-        }
+  <footer>
+    <p>Made with 🧀 by Cheese Buddy Team</p>
+    <p>Offline storage · saved on this device</p>
+  </footer>
 
-        function saveItems(items) {
-            localStorage.setItem('cheeseItems', JSON.stringify(items));
-        }
+  <script>
+    const YELLOW_THRESHOLD = 3;
 
-        function getDaysUntil(dateStr) {
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-            const expiry = new Date(dateStr + 'T00:00:00');
-            return Math.round((expiry - today) / (1000 * 60 * 60 * 24));
-        }
+    // ── Storage helpers ──────────────────────────────────────────────
 
-        function getStatus(days) {
-            if (days < 0) return 'red';
-            if (days <= YELLOW_THRESHOLD) return 'yellow';
-            return 'green';
-        }
+    function getProducts() {
+      return JSON.parse(localStorage.getItem('cheeseProducts') || '[]');
+    }
 
-        function getBadgeText(days) {
-           if (days < 0) return 'Expired ${Math.abs(days)}d ago';
-            if (days === 0) return 'Expires Today';
-            if (days === 1) return 'Expires Tomorrow';
-            return '${days} days left'; 
-        }
+    function saveProducts(products) {
+      localStorage.setItem('cheeseProducts', JSON.stringify(products));
+    }
 
-        function formatDate(dateStr) {
-            const d = new Date(dateStr + 'T00:00:00');
-            return d.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'});
-        }
+    function getCards() {
+      return JSON.parse(localStorage.getItem('cheeseCards') || '[]');
+    }
 
-        const defaultItems = [
-      { id: 1, name: 'Publix Yellow American' },
-      { id: 2, name: 'Publix White American' },
-      { id: 3, name: 'Publix Swiss' },
-      { id: 4, name: 'Publix Provolone' },
-      { id: 5, name: 'Publix Muenster' },
-      { id: 6, name: 'Publix Havarti' },
-      { id: 7, name: 'Publix Gouda' },
-      { id: 8, name: 'Publix Aged Cheddar' },
-      { id: 9, name: "Boar's Head Baby Swiss" },
+    function saveCards(cards) {
+      localStorage.setItem('cheeseCards', JSON.stringify(cards));
+    }
+
+    // ── Date & status helpers ────────────────────────────────────────
+
+    function getDaysUntil(dateStr) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const expiry = new Date(dateStr + 'T00:00:00');
+      return Math.round((expiry - today) / (1000 * 60 * 60 * 24));
+    }
+
+    function getStatus(days) {
+      if (days < 0) return 'red';
+      if (days <= YELLOW_THRESHOLD) return 'yellow';
+      return 'green';
+    }
+
+    function getBadgeText(days) {
+      if (days < 0) return `Expired ${Math.abs(days)}d ago`;
+      if (days === 0) return 'Expires today';
+      if (days === 1) return 'Expires tomorrow';
+      return `${days} days left`;
+    }
+
+    function formatDate(dateStr) {
+      const d = new Date(dateStr + 'T00:00:00');
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+
+    function escapeHtml(str) {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // ── Default product list ─────────────────────────────────────────
+
+    const defaultItems = [
+      { id: 1,  name: 'Publix Yellow American' },
+      { id: 2,  name: 'Publix White American' },
+      { id: 3,  name: 'Publix Swiss' },
+      { id: 4,  name: 'Publix Provolone' },
+      { id: 5,  name: 'Publix Muenster' },
+      { id: 6,  name: 'Publix Havarti' },
+      { id: 7,  name: 'Publix Gouda' },
+      { id: 8,  name: 'Publix Aged Cheddar' },
+      { id: 9,  name: "Boar's Head Baby Swiss" },
       { id: 10, name: "Boar's Head Lacey Swiss" },
       { id: 11, name: "Boar's Head Mild Swiss" },
       { id: 12, name: "Boar's Head Provolone" },
@@ -471,34 +534,19 @@
       { id: 26, name: 'Blue Cheese' },
     ];
 
-    function getProducts() {
-        return JSON.parse(localStorage.getItem('cheeseItems') || '[]');
-    }
-
-    function saveProducts(products) {
-        localStorage.setItem('cheeseProducts', JSON.stringify(products));
-    }
-
-    function getCards() {
-        return JSON.parse((localStorage.getItem('cheeseCards') || '[]'));
-    }
-
-    function saveCards(cards) {
-        localStorage.setItem('cheeseCards', JSON.stringify(cards));
-    }
-
     function initData() {
-        if (!localStorage.getItem('cheeseProducts')) {
-            saveProducts(defaultProducts);
-        }
-
-        if (!localStorage.getItem('cheeseCards')) {
-            saveCards([]);
-        }
+      if (!localStorage.getItem('cheeseProducts')) {
+        saveProducts(defaultItems);
+      }
+      if (!localStorage.getItem('cheeseCards')) {
+        saveCards([]);
+      }
     }
+
+    // ── Dropdown ─────────────────────────────────────────────────────
 
     function showDropdown() {
-      document.getElementById('dropdownList').style.display = 'block';
+      filterDropdown();
     }
 
     function hideDropdown() {
@@ -518,9 +566,7 @@
         return;
       }
 
-      const matches = products.filter(p =>
-        p.name.toLowerCase().includes(query)
-      );
+      const matches = products.filter(p => p.name.toLowerCase().includes(query));
 
       let html = matches
         .map(p => `<div class="dropdown-item" onmousedown="selectProduct('${p.name.replace(/'/g, "\\'")}')">${p.name}</div>`)
@@ -528,7 +574,8 @@
 
       const exactMatch = products.some(p => p.name.toLowerCase() === query);
       if (!exactMatch) {
-        html += `<div class="dropdown-item new-item" onmousedown="addNewProduct('${document.getElementById('inputName').value.trim().replace(/'/g, "\\'")}')">➕ Add: "${document.getElementById('inputName').value.trim()}"</div>`;
+        const raw = document.getElementById('inputName').value.trim();
+        html += `<div class="dropdown-item new-item" onmousedown="addNewProduct('${raw.replace(/'/g, "\\'")}')">➕ Add: "${raw}"</div>`;
       }
 
       if (!html) {
@@ -556,9 +603,11 @@
       selectProduct(name);
     }
 
+    // ── Add item ─────────────────────────────────────────────────────
+
     function addItem() {
-      const nameInput = document.getElementById('inputName').value.trim();
-      const dateInput = document.getElementById('inputDate').value;
+      const name = document.getElementById('inputName').value.trim();
+      const date = document.getElementById('inputDate').value;
 
       if (!name) {
         alert('Please enter a product name.');
@@ -572,118 +621,108 @@
       addNewProduct(name);
 
       const cards = getCards();
-      cards.push({ id: Date.now(), name, date});
+      cards.push({ id: Date.now(), name, date });
       saveCards(cards);
 
       document.getElementById('inputName').value = '';
       document.getElementById('inputDate').value = '';
       document.getElementById('dropdownList').style.display = 'none';
-      
+
       renderItems();
     }
 
+    // ── Filter & render ──────────────────────────────────────────────
+
     let currentFilter = 'all';
 
-    function setFilter(filter){
-        currentFilter = filter;
+    function setFilter(filter) {
+      currentFilter = filter;
 
-        document.getElementById('btnAll').classList.remove('active');
-        document.getElementById('btnYellow').classList.remove('active');
-        document.getElementById('btnExpired').classList.remove('active');
+      document.getElementById('btnAll').classList.remove('active');
+      document.getElementById('btnYellow').classList.remove('active');
+      document.getElementById('btnExpired').classList.remove('active');
 
-        if (filter === 'all') document.getElementById('btnALL').calssList.add('active');
-        if (filter === 'yellow') document.getElementById('btnYellow').classList.add('active');
-        if (filter === 'red') document.getElementById('btnExpired').classList.add('active');
+      if (filter === 'all')    document.getElementById('btnAll').classList.add('active');
+      if (filter === 'yellow') document.getElementById('btnYellow').classList.add('active');
+      if (filter === 'red')    document.getElementById('btnExpired').classList.add('active');
 
-        renderItems();
+      renderItems();
     }
 
     function renderItems() {
-        const query = document.getElementById('searchInput').value.toLowerCase().trim();
-        const clearBtn = document.getElementById('searchClear');
-        clearBtn.style.display = query ? 'block' : 'none';
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const clearBtn = document.getElementById('searchClear');
+      clearBtn.style.display = query ? 'block' : 'none';
 
-        let cards = getCards();
+      let cards = getCards();
 
-        cards.sort((a, b) => {
-            if (!a.date && !b.date) return 0;
-            if (!a.date) return 1;
-            if (!b.date) return -1;
-            return getDaysUntil(a.date) - getDaysUntil(b.date);
-        });
+      // Sort soonest expiry first; no-date cards go to bottom
+      cards.sort((a, b) => {
+        if (!a.date && !b.date) return 0;
+        if (!a.date) return 1;
+        if (!b.date) return -1;
+        return getDaysUntil(a.date) - getDaysUntil(b.date);
+      });
 
-        if (query) {
-            cards = cards.filter(c => c.name.toLowerCase().includes(query));
-        }
+      // Search filter
+      if (query) {
+        cards = cards.filter(c => c.name.toLowerCase().includes(query));
+      }
 
-        let green = 0, yellow = 0, red = 0;
-        getCards().forEach(c => {
-            if (!c.date) return;
-            const status = getStatus(getDaysUntil(c.date));
-            if (status === 'green') green++;
-            else if (status === 'yellow') yellow++;
-            else red++;
-        });
+      // Update summary counts from full unfiltered list
+      let green = 0, yellow = 0, red = 0;
+      getCards().forEach(c => {
+        if (!c.date) return;
+        const status = getStatus(getDaysUntil(c.date));
+        if (status === 'green') green++;
+        else if (status === 'yellow') yellow++;
+        else red++;
+      });
+      document.getElementById('countGreen').textContent = green;
+      document.getElementById('countYellow').textContent = yellow;
+      document.getElementById('countRed').textContent = red;
 
-        document.getElementById('countGreen').textContent = green;
-        document.getElementById('countYellow').textContent = yellow;
-        document.getElementById('countRed').textContent = red;
+      // Status filter
+      if (currentFilter === 'yellow') {
+        cards = cards.filter(c => c.date && getStatus(getDaysUntil(c.date)) === 'yellow');
+      } else if (currentFilter === 'red') {
+        cards = cards.filter(c => c.date && getStatus(getDaysUntil(c.date)) === 'red');
+      }
 
-        if (currentFilter === 'yellow') {
-            cards = cards.filter(c => c.date && getStatus(getDaysUntil(c.date)) === 'yellow');
-        } else if (currentFilter === 'red') {
-            cards = cards.filter(c => c.date && getStatus(getDaysUntil(c.date)) === 'red');
-        }
+      const list = document.getElementById('itemsList');
 
-        const list = document.getElementById('itemsList');
+      if (cards.length === 0) {
+        list.innerHTML = `
+          <div class="empty-state">
+            <span>🧀</span>
+            ${query ? 'No results found.' : currentFilter !== 'all' ? 'No items in this category.' : 'No cards yet. Add your first cheese above!'}
+          </div>`;
+        return;
+      }
 
-        if (cards.length === 0) {
-            list.innerHTML = `
-            <div class="empty-state">
-                <span>🧀</span>
-                ${query ? 'No results found.' : currentFilter !== 'all' ? 'No items in this category.' : 'No cards yet. Add your first cheese above!'}
-            </div>`;
-            return;
-        }
+      list.innerHTML = cards.map(card => {
+        const hasDate = card.date !== '';
+        const days   = hasDate ? getDaysUntil(card.date) : null;
+        const status = hasDate ? getStatus(days) : 'none';
+        const badge  = hasDate ? getBadgeText(days) : 'No date set';
+        const dateDisplay = hasDate ? `Exp: ${formatDate(card.date)}` : 'No expiration date entered';
 
-        list.innerHTML = cards.map(card => {
-            const hasDate = card.date !== '';
-            const days = hasDate ? getDaysUntil(card.date) : null;
-            const status = hasDate ? getStatus(days) : 'none';
-            const badge = hasDate ? getBadgeText(days) : 'No date set';
-            const dateDisplay = hasDate ? `Exp: ${formatDate(card.date)}` : 'No expiration date';
-
-            return `
-            <div class="item-card ${status}">
-                <div class="item-info">
-                    <div class="item-name">${escapeHtml(card.name)}</div>
-                    <div class="item-date">${dateDisplay}</div>
-                </div>
-                <div class="item-badge">${badge}</div>
-                <button class="btn-delete" onclick="deleteCard(${card.id})" title="Delete">🗑</button>
-            </div>`;
-            }).join('');
-    }
-
-    function escapeHtml(str) {
-        return str
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quote;');
+        return `
+          <div class="item-card ${status}">
+            <div class="item-info">
+              <div class="item-name">${escapeHtml(card.name)}</div>
+              <div class="item-date">${dateDisplay}</div>
+            </div>
+            <div class="item-badge">${badge}</div>
+            <button class="btn-delete" onclick="deleteCard(${card.id})" title="Delete">🗑</button>
+          </div>`;
+      }).join('');
     }
 
     function deleteCard(id) {
-        const cards = getCards().filter(c => c.id !== id);
-        saveCards(cards);
-        renderItems();
-    }
-
-    function initItems() {
-      const existing = localStorage.getItem('cheeseItems');
-      if (!existing) {
-        saveItems(defaultItems);
-      }
+      const cards = getCards().filter(c => c.id !== id);
+      saveCards(cards);
+      renderItems();
     }
 
     function clearSearch() {
@@ -691,10 +730,43 @@
       renderItems();
     }
 
-    // --- App Startup ---
+    function exportCards() {
+      const data = {
+        cheeseCards: getCards(),
+        cheeseProducts: getProducts()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `cheese-buddy-backup-${new Date().toISOString().split('T')[0]}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function importCards(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (data.cheeseCards) saveCards(data.cheeseCards);
+          if (data.cheeseProducts) saveProducts(data.cheeseProducts);
+          renderItems();
+          alert('Import successful!');
+        } catch (err) {
+          alert('Invalid JSON file. Please use a Cheese Buddy JSON.');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // ── Startup ──────────────────────────────────────────────────────
     initData();
     renderItems();
-    </script>
+  </script>
 
 </body>
 </html>
